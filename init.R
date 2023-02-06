@@ -161,7 +161,7 @@ case <- function(bot, update){
       "Wenn du am Prüfungstag krank bist, musst du dich mit einem Attest beim",
       "Prüfungsamt krank melden. *E-Mails an uns reichen nicht aus!*",
       "\n\nDie Bescheinigung zur Prüfungsunfähigkeit findest du hier: [Link zum Prüfungsamt](https://www.uni-giessen.de/de/fbz/paemter/gwiss/down)",
-      "\n\nWeitere Infos zum Thema Attest/Krankheit findest du in den [FAQs](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16922_261289&client_id=JLUG)"
+      "\n\nWeitere Infos zum Thema Attest/Krankheit findest du in den [FAQs](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16922_261289&client_id=JLUG)",
       "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
     )
     
