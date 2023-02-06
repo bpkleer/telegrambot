@@ -18,15 +18,27 @@ keyStart <- ReplyKeyboardMarkup(
 
 keyExams <- ReplyKeyboardMarkup(
   keyboard = list(
-    list(KeyboardButton("\xF0\x9F\x85\xB0 \xF0\x9F\x95\x93 Ort/Zeit Prüfung")),
-    list(KeyboardButton("\xF0\x9F\x85\xB1 \xF0\x9F\x9A\x8F Prüfungsregularien")),
-    list(KeyboardButton("/start"))
+    list(
+      KeyboardButton("\xF0\x9F\x9A\xA8 Prüfungsanmeldung"),
+      KeyboardButton("\xF0\x9F\x98\xB7 Attest/Krankheit"),
+      KeyboardButton("\xF0\x9F\x95\x93 Ort/Zeit Klausur")
+      ),
+    list(
+      KeyboardButton("\xF0\x9F\x94\x84 Wiederholungsprüfung"),
+      KeyboardButton("\xF0\x9F\x9A\x8F Präsenzprüfung"),
+      KeyboardButton("\xF0\x9F\x8C\x8F Online-Prüfung")
+      ),
+    list(
+      KeyboardButton("\xF0\x9F\x93\x9D Hausarbeit"),
+      KeyboardButton("\xF0\x9F\x93\x90 Vorleistung"),
+      KeyboardButton("/start \xF0\x9F\x94\x83")
+      )
   )
 )
 
 keyBack <- ReplyKeyboardMarkup(
   keyboard = list(
-    list(KeyboardButton("/start"))
+    list(KeyboardButton("/start \xF0\x9F\x94\x83"))
   )
 )
 
@@ -65,10 +77,15 @@ case <- function(bot, update){
     text_caps <- paste0(
       "Du möchtest Informationen zu \x31\xE2\x83\xA3 Prüfungen bekommen.\n\n",
       "Welche Information benötigst du?\n\n",
-      "\xF0\x9F\x85\xB0 \xF0\x9F\x95\x93 Wann und wo findet die Prüfung statt?\n\n",
-      "\xF0\x9F\x85\xB1 \xF0\x9F\x9A\x8F Wie läuft die Prüfung ab? Welche Regularien gibt es?",
-      " (Krankheit, Wiederholungsprüfung, Vorleistung)",
-      "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
+      "\xF0\x9F\x9A\xA8 Wie melde ich mich zur Prüfung an?\n\n",
+      "\xF0\x9F\x98\xB7 Was mache ich, wenn ich krank bin?\n\n",
+      "\xF0\x9F\x95\x93 Wo findet die Klausur statt?\n\n",
+      "\xF0\x9F\x94\x84 Ich bin durchgefallen. Was nun?\n\n",
+      "\xF0\x9F\x9A\x8F Alles zu Präsenzprüfungen\n\n",
+      "\xF0\x9F\x8C\x8F Alles zu Online-Prüfungen\n\n",
+      "\xF0\x9F\x93\x9D Alles zu Hausarbeit, Ausarbeitungen oder Thesis \n\n",
+      "\xF0\x9F\x93\x90 Alles zur Vorleistung\n\n",
+      "\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
     )
     
     bot$sendMessage(
@@ -126,11 +143,25 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "A" | text == "a" | text == "\xF0\x9F\x85\xB0" | text == "\xF0\x9F\x85\xB0 \xF0\x9F\x95\x93 Ort/Zeit Prüfung") {
+  } else if  (text == "\xF0\x9F\x9A\xA8 Prüfungsanmeldung" | text == "Prüfungsanmeldung" | text == "Anmeldung") {
     text_caps <- paste0(
-      "Alles rund um die Prüfungstermine \xF0\x9F\x95\x93 (Ort, Uhrzeit, etc.)",
-      " findest du",
-      " [hier](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16931_261601&client_id=JLUG).",
+      "Für jede Prüfung musst du dich in *flexnow* anmelden. Beachte dazu, die",
+      " unterschiedlichen [Anmeldefristen](https://www.uni-giessen.de/de/studium/waehrend/ecampus/flexnow/fristen) nach Studiengang.",
+      "\n\n Hier findest du weitere Informationen: [Link ins FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16915_261289&client_id=JLUG)"
+    )
+    
+    bot$sendMessage(
+      chat_id = update$message$chat_id,
+      text = text_caps,
+      parse_mode = "Markdown",
+      reply_markup = keyBack
+    )
+  } else if  (text == "\xF0\x9F\x98\xB7 Attest/Krankheit" | text == "Attest" | text == "Krankheit") {
+    text_caps <- paste0(
+      "Wenn du am Prüfungstag krank bist, musst du dich mit einem Attest beim",
+      "Prüfungsamt krank melden. *E-Mails an uns reichen nicht aus!*",
+      "\n\nDie Bescheinigung zur Prüfungsunfähigkeit findest du hier: [Link zum Prüfungsamt](https://www.uni-giessen.de/de/fbz/paemter/gwiss/down)",
+      "\n\nWeitere Infos zum Thema Attest/Krankheit findest du in den [FAQs](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16922_261289&client_id=JLUG)"
       "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
     )
     
@@ -140,12 +171,93 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "B" | text == "b" | text == "\xF0\x9F\x85\xB1" | text == "\xF0\x9F\x85\xB1 \xF0\x9F\x9A\x8F Prüfungsregularien") {
+  } else if  (text == "\xF0\x9F\x95\x93 Ort/Zeit Klausur" | text == "Ort" | text == "Zeit") {
     text_caps <- paste0(
-      "Alles rund um \xF0\x9F\x9A\x8F Prüfungen findest du in unserem",
-      " \xF0\x9F\x93\x9D [Wiki](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16910_261601&client_id=JLUG).\n\n",
-      "Sollte sich deine Frage \xE2\x9D\x93 nicht klären, schreib eine \xF0\x9F\x93\xA9 E-Mail an",
-      " team-abendschoen@sowi.uni-giessen.de!",
+      "Alles rund um die Prüfungstermine \xF0\x9F\x95\x93 (Ort, Uhrzeit, etc.)",
+      " findest du",
+      " [hier](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16915_261289&client_id=JLUG).",
+      "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
+    )
+    
+    bot$sendMessage(
+      chat_id = update$message$chat_id,
+      text = text_caps,
+      parse_mode = "Markdown",
+      reply_markup = keyBack
+    )
+  } else if  (text == "\xF0\x9F\x94\x84 Wiederholungsprüfung" | text == "Durchgefallen" | text == "Wiederholungsprüfung") {
+    text_caps <- paste0(
+      "Wenn du eine Prüfung wiederholen musst, musst du automatisch am nächsten Termin", 
+      " teilnehmen. *Beachte*, dass du keine gesonderte Einladung bekommst. Du musst",
+      " dich selbstständig über die nächsten Termine informieren!",
+      "\n\nPrüfungstermine an unserer Professur findest du immer [hier](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16931_261289&client_id=JLUG).",
+      "\n\nWeitere Infos zur Prüfungswiederholung findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16923_261289&client_id=JLUG).",
+      "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
+    )
+    
+    bot$sendMessage(
+      chat_id = update$message$chat_id,
+      text = text_caps,
+      parse_mode = "Markdown",
+      reply_markup = keyBack
+    )
+  } else if  (text == "\xF0\x9F\x9A\x8F Präsenzprüfung" | text == "Präsenzprüfung" | text == "Präsenz") {
+    text_caps <- paste0(
+      "Du schreibst eine Klausur bei uns und bist unsicher, wann die Prüfung beginnt?",
+      "Oder du willst wissen, wie lange die Klausur dauert?",
+      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19185_261289&client_id=JLUG)",
+      " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
+      " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
+      "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
+    )
+    
+    bot$sendMessage(
+      chat_id = update$message$chat_id,
+      text = text_caps,
+      parse_mode = "Markdown",
+      reply_markup = keyBack
+    )
+  } else if  (text == "\xF0\x9F\x8C\x8F Online-Prüfung" | text == "Onlineprüfung" | text == "Online" | text == "Online-Prüfung") {
+    text_caps <- paste0(
+      "Du schreibst eine \xF0\x9F\x8C\x8F Online-Prüfung (z.B. Open-Book-Test) bei uns und bist unsicher,",
+      " wie diese abläuft?",
+      "Oder du willst wissen, welche Funktionen es im Online-Test gibt?",
+      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19186_261289&client_id=JLUG)",
+      " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
+      " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
+      "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
+    )
+    
+    bot$sendMessage(
+      chat_id = update$message$chat_id,
+      text = text_caps,
+      parse_mode = "Markdown",
+      reply_markup = keyBack
+    )
+  } else if  (text == "\xF0\x9F\x93\x9D Hausarbeit" | text == "Hausarbeit" | text == "Ausarbeitung" | text == "Seminararbeit" ) {
+    text_caps <- paste0(
+      "Du schreibst eine \xF0\x9F\x93\x9D Hausarbeit, Ausarbeit oder Seminararbeit bei uns und bist unsicher,",
+      " wie hoch der Seitenumfang ist?",
+      "Oder du willst wissen, welche Abgabefristen es gibt?",
+      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19187_261289&client_id=JLUG)",
+      " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
+      " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
+      "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
+    )
+    
+    bot$sendMessage(
+      chat_id = update$message$chat_id,
+      text = text_caps,
+      parse_mode = "Markdown",
+      reply_markup = keyBack
+    )
+  } else if  (text == "\xF0\x9F\x93\x90 Vorleistung" | text == "Vorleistung") {
+    text_caps <- paste0(
+      "Du bist gerade in einem Kurs an unserer Professur und musst eine Vorleistung",
+      " erbringen?",
+      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19188_261289&client_id=JLUG)",
+      " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
+      " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
       "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
     )
     
