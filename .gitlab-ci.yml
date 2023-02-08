@@ -1,0 +1,19 @@
+image: rocker/tidyverse
+
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+
+stages:
+  - build
+  - deploy
+
+load packages:
+  stage: build
+  script: 
+    - R -e 'source("./install.R", chdir = TRUE)'
+
+deployment:
+  stage: deploy
+  script:
+    - R -e 'source("./init.R", chdir = TRUE)'
