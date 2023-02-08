@@ -12,6 +12,5 @@ deployment:
   variables:
     SECURE_FILES_DOWNLOAD_PATH: './'
   script:
-    - COPY .Renviron ./.Renviron
     - R -e 'source("./install.R", chdir= TRUE)'
     - R -e 'source("./init.R", chdir = TRUE)'
