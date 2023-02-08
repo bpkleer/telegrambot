@@ -17,9 +17,6 @@
 # RStudio files
 .Rproj.user/
 
-# Environ Variables
-.REnviron
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
