@@ -4,7 +4,8 @@ library("tidyverse")
 # Automatization try ----
 # usethis::edit_r_environ("project")
 # this should be in .Renviron file bot_token() function
-updater <- Updater(token = bot_token("RTelegramBot"))
+# updater <- Updater(token = bot_token("RTelegramBot"))
+updater <- Updater(token = "5997312667:AAHlJhVf2ayai-R0eTeVPgXcjS48iU5Gauo")
 
 # Custom keyboard replies
 keyStart <- ReplyKeyboardMarkup(
