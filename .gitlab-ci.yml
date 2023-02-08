@@ -10,6 +10,6 @@ stages:
 deployment:
   stage: build
   script:
-    - COPY .Renviron /root/.Renviron
+    - R -e 'token <- $TOKEN'
     - R -e 'source("./install.R", chdir = TRUE)'
     - R -e 'source("./init.R", chdir = TRUE)'
