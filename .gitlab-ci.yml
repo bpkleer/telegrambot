@@ -6,14 +6,9 @@ workflow:
 
 stages:
   - build
-  - deploy
-
-load packages:
-  stage: build
-  script: 
-    - R -e 'source("./install.R", chdir = TRUE)'
 
 deployment:
-  stage: deploy
+  stage: build
   script:
+    - R -e 'source("./install.R", chdir = TRUE)'
     - R -e 'source("./init.R", chdir = TRUE)'
