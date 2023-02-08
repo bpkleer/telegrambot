@@ -9,7 +9,9 @@ stages:
 
 deployment:
   stage: build
+  variables:
+    SECURE_FILES_DOWNLOAD_PATH: './'
   script:
-    - R -e 'token <- $TOKEN'
-    - R -e 'source("./install.R", chdir = TRUE)'
+     - curl --silent 'https://gitlab.com/gitlab-org/incubation-engineering/mobile-devops/download-secure-files/-/raw/main/installer' | bash
+    - R -e 'source("./install.R", chdir= TRUE)'
     - R -e 'source("./init.R", chdir = TRUE)'
