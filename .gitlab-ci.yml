@@ -9,8 +9,6 @@ stages:
 
 deployment:
   stage: build
-  variables:
-    SECURE_FILES_DOWNLOAD_PATH: './'
   script:
     - R -e 'source("./install.R", chdir= TRUE)'
     - R -e 'source("./init.R", chdir = TRUE)'
