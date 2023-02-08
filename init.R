@@ -1,4 +1,5 @@
 library("telegram.bot")
+library("tidyverse")
 
 # Automatization try ----
 # usethis::edit_r_environ("project")
@@ -74,8 +75,9 @@ wordsPlace <- c(
 )
 wordsPresence <- c("Präsenzprüfung", "Präsenzklausur")
 wordsExam <- c(
-  "Prüfung", "MAP", "Prüfungsregularien", "Prüfungsregeln", 
-  "Prüfungsablauf", "Allgemeines zur Prüfung"   
+  "MAP", "Prüfungsregularien", "Prüfungsregeln", 
+  "Prüfungsablauf", "Allgemeines zur Prüfung",
+  "Infos zur Prüfung", "Informationen zur Prüfung", "Information zur Prüfung"
 )
 wordsTeam <- c(
   "Note", "Notenbescheinigung", "Leistungsnachweis", 
@@ -120,7 +122,7 @@ start_handler <- CommandHandler("start", start)
 case <- function(bot, update){
   text <- update$message$text
   
-  if (text == "1" | text == "1." | text == "\x31\xE2\x83\xA3 Prüfungen" | (any(str_detect(string, regex(wordsExam, ignore_case =TRUE))))){
+  if (text == "1" | text == "1." | text == "\x31\xE2\x83\xA3 Prüfungen" | (any(str_detect(text, regex(wordsExam, ignore_case =TRUE))))){
     text_caps <- paste0(
       "Du möchtest Informationen zu \x31\xE2\x83\xA3 Prüfungen bekommen.\n\n",
       "Welche Information benötigst du?\n\n",
@@ -141,7 +143,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyExams
     ) 
-  } else if (text == "2" | text == "2." | text == "\x32\xE2\x83\xA3 Sprechstunden" | (any(str_detect(string, regex(wordsOffice, ignore_case =TRUE))))) {
+  } else if (text == "2" | text == "2." | text == "\x32\xE2\x83\xA3 Sprechstunden" | (any(str_detect(text, regex(wordsOffice, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Du möchtest Informationen zur \xF0\x9F\x93\x85 *Sprechstunde* haben.",
       " Hier sind sie:\n\nIm Team Methoden werden *alle* Sprechstunden-Termine",
@@ -160,7 +162,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     ) 
-  } else if (text == "3" | text == "3." | text == "\x33\xE2\x83\xA3 Thesis" | (any(str_detect(string, regex(wordsThesis, ignore_case =TRUE))))){
+  } else if (text == "3" | text == "3." | text == "\x33\xE2\x83\xA3 Thesis" | (any(str_detect(text, regex(wordsThesis, ignore_case =TRUE))))){
     text_caps <- paste0(
       "Die \xF0\x9F\x8E\x93 *Thesis-Betreuung* (Bachelor/Master) ist grundsätzlich",
       " bei *allen Personen der Professur* möglich, bei Mitarbeiter:innen ohne",
@@ -190,7 +192,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "\xF0\x9F\x9A\xA8 Prüfungsanmeldung" | (any(str_detect(string, regex(wordsAnmeldung, ignore_case =TRUE))))) {
+  } else if  (text == "\xF0\x9F\x9A\xA8 Prüfungsanmeldung" | (any(str_detect(text, regex(wordsAnmeldung, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Für jede Prüfung musst du dich in *flexnow* anmelden. Beachte dazu, die",
       " unterschiedlichen [Anmeldefristen](https://www.uni-giessen.de/de/studium/waehrend/ecampus/flexnow/fristen) nach Studiengang.",
@@ -203,7 +205,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "\xF0\x9F\x98\xB7 Attest/Krankheit" | (any(str_detect(string, regex(wordsIll, ignore_case =TRUE))))) {
+  } else if  (text == "\xF0\x9F\x98\xB7 Attest/Krankheit" | (any(str_detect(text, regex(wordsIll, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Wenn du am Prüfungstag krank bist, musst du dich mit einem Attest beim",
       "Prüfungsamt krank melden. *E-Mails an uns reichen nicht aus!*",
@@ -218,7 +220,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "\xF0\x9F\x95\x93 Ort/Zeit Klausur" | (any(str_detect(string, regex(wordsPlace, ignore_case =TRUE))))) {
+  } else if  (text == "\xF0\x9F\x95\x93 Ort/Zeit Klausur" | (any(str_detect(text, regex(wordsPlace, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Alles rund um die Prüfungstermine \xF0\x9F\x95\x93 (Ort, Uhrzeit, etc.)",
       " findest du",
@@ -232,7 +234,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "\xF0\x9F\x94\x84 Wiederholungsprüfung" | (any(str_detect(string, regex(wordsFail, ignore_case =TRUE))))) {
+  } else if  (text == "\xF0\x9F\x94\x84 Wiederholungsprüfung" | (any(str_detect(text, regex(wordsFail, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Wenn du eine Prüfung wiederholen musst, musst du automatisch am nächsten Termin", 
       " teilnehmen. *Beachte*, dass du keine gesonderte Einladung bekommst. Du musst",
@@ -248,7 +250,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "\xF0\x9F\x9A\x8F Präsenzprüfung" | (any(str_detect(string, regex(wordsPresence, ignore_case =TRUE))))) {
+  } else if  (text == "\xF0\x9F\x9A\x8F Präsenzprüfung" | (any(str_detect(text, regex(wordsPresence, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Du schreibst eine Klausur bei uns und bist unsicher, wann die Prüfung beginnt?",
       "Oder du willst wissen, wie lange die Klausur dauert?",
@@ -264,7 +266,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "\xF0\x9F\x8C\x8F Online-Prüfung" | (any(str_detect(string, regex(wordsOnline, ignore_case =TRUE))))) {
+  } else if  (text == "\xF0\x9F\x8C\x8F Online-Prüfung" | (any(str_detect(text, regex(wordsOnline, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Du schreibst eine \xF0\x9F\x8C\x8F Online-Prüfung (z.B. Open-Book-Test) bei uns und bist unsicher,",
       " wie diese abläuft?",
@@ -281,7 +283,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (text == "\xF0\x9F\x93\x9D Hausarbeit" | (any(str_detect(string, regex(wordsWritten, ignore_case =TRUE))))) {
+  } else if  (text == "\xF0\x9F\x93\x9D Hausarbeit" | (any(str_detect(text, regex(wordsWritten, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Du schreibst eine \xF0\x9F\x93\x9D Hausarbeit, Ausarbeit oder Seminararbeit bei uns und bist unsicher,",
       " wie hoch der Seitenumfang ist?",
@@ -314,13 +316,13 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (any(str_detect(string, regex(wordsSimone, ignore_case =TRUE)))) {
+  } else if  (any(str_detect(text, regex(wordsSimone, ignore_case =TRUE)))) {
     text_caps <- paste0(
       "Prof. Dr. Simone Abendschön leitet unser Team und ist die Professorin.",
       "Sie lehrt in allen Studiengängen und betreut auch alle verschiedenen",
       " Abschlussarbeiten. Dazu ist sie Studiengangsverantwortliche für den",
       " BA Social Sciences.",
-      "\n\Hier kannst du einen Termin in der [Sprechstunde von Simone Abendschön](https://studip.uni-giessen.de/dispatch.php/consultation/overview?username=g31441)",
+      "\n\nHier kannst du einen Termin in der [Sprechstunde von Simone Abendschön](https://studip.uni-giessen.de/dispatch.php/consultation/overview?username=g31441)",
       " buchen. Auf der [Website](https://www.uni-giessen.de/de/fbz/fb03/institutefb03/ifp/Lehrende_Team/Professor_innen/abendschoen/index)",
       " findest du weitere \xE2\x84\xB9 Informationen sowie \xF0\x9F\x93\xA8 Kontaktdaten zur Person."
     )
@@ -331,12 +333,12 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (any(str_detect(string, regex(wordsTim, ignore_case =TRUE)))) {
+  } else if  (any(str_detect(text, regex(wordsTim, ignore_case =TRUE)))) {
     text_caps <- paste0(
       "Tim Schmidt ist wissenschaftlicher Mitarbeiter an der Professur",
       " und lehrt in den Studiengängen am Institut. Er betreut sowohl Bachelor-/Masterarbeiten",
       " als auch Staatsexamen (bzw. WHA).",
-      "\n\Hier kannst du einen Termin in der [Sprechstunde von Tim Schmidt](https://studip.uni-giessen.de/dispatch.php/consultation/overview?username=g32078)",
+      "\n\nHier kannst du einen Termin in der [Sprechstunde von Tim Schmidt](https://studip.uni-giessen.de/dispatch.php/consultation/overview?username=g32078)",
       " buchen. Auf der [Website](https://www.uni-giessen.de/de/fbz/fb03/institutefb03/ifp/Lehrende_Team/Mitarbeiter_innen/schmidt)",
       " findest du weitere \xE2\x84\xB9 Informationen sowie \xF0\x9F\x93\xA8 Kontaktdaten zur Person."
     )
@@ -347,11 +349,11 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (any(str_detect(string, regex(wordsPhil, ignore_case =TRUE)))) {
+  } else if  (any(str_detect(text, regex(wordsPhil, ignore_case =TRUE)))) {
     text_caps <- paste0(
       "Philipp Kleer ist wissenschaftlicher Mitarbeiter an der Professur",
       " und forscht im Projekt G-EPIC. Auf Anfrage betreut er ebenfalls Bachelor- und Masterarbeiten.",
-      "\n\Hier kannst du einen Termin in der [Sprechstunde von Philipp Kleer](https://ilias.uni-giessen.de/ilias/goto.php?target=usr_172921&client_id=JLUG)",
+      "\n\nHier kannst du einen Termin in der [Sprechstunde von Philipp Kleer](https://ilias.uni-giessen.de/ilias/goto.php?target=usr_172921&client_id=JLUG)",
       " buchen. Weitere \xE2\x84\xB9 Informationen sowie \xF0\x9F\x93\xA8 Kontaktdaten zur Person findest du auf der",
       " [JLU-Website](https://www.uni-giessen.de/de/fbz/fb03/institutefb03/ifp/Lehrende_Team/Mitarbeiter_innen/kleer)",
       " oder [hier](https://www.bpkleer.de)."
@@ -363,7 +365,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (any(str_detect(string, regex(wordsPatricia, ignore_case =TRUE)))) {
+  } else if  (any(str_detect(text, regex(wordsPatricia, ignore_case =TRUE)))) {
     text_caps <- paste0(
       "Patricia Kamper ist wissenschaftliche Mitarbeiterin an der Professur",
       " und forscht im Projekt 'Demokratie leben lernen 2.0'.",
@@ -377,7 +379,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (any(str_detect(string, regex(wordsMical, ignore_case =TRUE)))) {
+  } else if  (any(str_detect(text, regex(wordsMical, ignore_case =TRUE)))) {
     text_caps <- paste0(
       "Mical Gerezgiher ist wissenschaftliche Mitarbeiterin an der Professur",
       " und forscht im Projekt 'Demokratie leben lernen 2.0'.",
@@ -391,7 +393,7 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (any(str_detect(string, regex(wordsAngelika, ignore_case =TRUE)))) {
+  } else if  (any(str_detect(text, regex(wordsAngelika, ignore_case =TRUE)))) {
     text_caps <- paste0(
       "Angelika Wicke ist die Sekretärin an der Professur.",
       " Bei allgemeinen Anfragen kannst du dich zuerst an Sie wenden oder eine",
@@ -406,14 +408,14 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
-  } else if  (any(str_detect(string, regex(wordsTeam, ignore_case =TRUE)))) {
+  } else if  (any(str_detect(text, regex(wordsTeam, ignore_case =TRUE)))) {
     text_caps <- paste0(
       "Für Notenanfragen, Leistungsnachweise, Prüfungseinsichten bzw. allen Anfragen",
       " rund ums \xF0\x9F\x8E\x93 Prüfen, wende dich bitte per \xF0\x9F\x93\xA9 E-Mail",
       " an team-abendschoen@sowi.uni-giessen.de !",
       "\n\nBeachte, dass nur E-Mails von Uni-Accounts beantworten werden dürfen.",
       " Denke daran, alle wichtigen Infos in die E-Mail zu schreiben: Prüfung,",
-      " Semester, Dozent:in und deine Matrikelnummer."
+      " Semester, Dozent:in und deine Matrikelnummer.",
       "\n\nIn der Regel erhältst du innerhalb einer Woche eine Antwort."
     )
     
@@ -427,7 +429,7 @@ case <- function(bot, update){
     text_caps = paste0(
       "Hierauf habe ich leider noch keine Antwort!\n\n", 
       " versuche ein anderes Stichwort oder Befehl. Alternativ schreibe eine",
-      " E-Mail mit deinem Anliegen an team-abendschoen@sowi.uni-giessen.de !"
+      " E-Mail mit deinem Anliegen an team-abendschoen@sowi.uni-giessen.de !",
       "\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
     )
     
