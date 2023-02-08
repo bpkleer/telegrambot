@@ -77,7 +77,8 @@ wordsPresence <- c("Präsenzprüfung", "Präsenzklausur")
 wordsExam <- c(
   "MAP", "Prüfungsregularien", "Prüfungsregeln", 
   "Prüfungsablauf", "Allgemeines zur Prüfung",
-  "Infos zur Prüfung", "Informationen zur Prüfung", "Information zur Prüfung"
+  "Infos zur Prüfung", "Informationen zur Prüfung",
+  "Information zur Prüfung", "(?<!.)Prüfung"
 )
 wordsTeam <- c(
   "Note", "Notenbescheinigung", "Leistungsnachweis", 
