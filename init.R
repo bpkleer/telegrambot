@@ -84,6 +84,10 @@ wordsTeam <- c(
   "Note", "Notenbescheinigung", "Leistungsnachweis", 
   "Einsicht", "Klausureinsicht"
 )
+wordsTut <- c(
+  "Tutorium", "Tutor", "Tutorin", "Tutor:in", "Tutoren",
+  "Tutorinnen", "Tutor:innen"
+)
 
 
 # Functions
@@ -107,7 +111,7 @@ start <- function(bot, update){
         " /start \xF0\x9F\x94\x83.\n\nWomit kann ich dir helfen?",
         "\n\n\x31\xE2\x83\xA3 Fragen zu Prüfungen \xF0\x9F\x93\x8A",
         "\n\n\x32\xE2\x83\xA3 Sprechstunden \xF0\x9F\x93\x85",
-        "\n\n\x33\xE2\x83\xA3 Thesis-Betreuungen \xF0\x9F\x8E\x93", 
+        "\n\n\x33\xE2\x83\xA3 Thesis-Betreuungen / Staatsexamen \xF0\x9F\x8E\x93", 
         "\n\nAlternativ schreibe ein paar Stichwörter: z.B. Infos zu Simone Abendschön.",
         " Wenn ich einmal nicht weiter weiß, kannst du deine Anfrage spezifizieren.",
         " Schreibe zum Beispiel 'Prüfungsanmeldung' anstatt 'Anmeldung'."
@@ -174,7 +178,7 @@ case <- function(bot, update){
       "\n\nAm besten schaust du dir vorher auf den persönlichen Seiten der Personen", 
       " an der Professur an, welche Forschungsschwerpunkte diese haben und *welche*",
       " *Person am besten zu deinem geplanten Abschlussprojekt* passt. Wir haben",
-      " [*hier*](https://ilias.uni-giessen.de/ilias/goto.php?target=dcl_261967&client_id=JLUG)",
+      " [hier](https://ilias.uni-giessen.de/ilias/goto.php?target=dcl_261967&client_id=JLUG)",
       " eine Auswahl bisheriger Abschlussarbeiten \xF0\x9F\x93\x9A zur Übersicht zusammengestellt.\n\n",
       "Richte dich einfach direkt an die jeweilige Person (per E-Mail oder",
       " buche einen Termin in der \x32\xE2\x83\xA3 Sprechstunde) und stelle deine",
@@ -254,8 +258,8 @@ case <- function(bot, update){
   } else if  (text == "\xF0\x9F\x9A\x8F Präsenzprüfung" | (any(str_detect(text, regex(wordsPresence, ignore_case =TRUE))))) {
     text_caps <- paste0(
       "Du schreibst eine Klausur bei uns und bist unsicher, wann die Prüfung beginnt?",
-      "Oder du willst wissen, wie lange die Klausur dauert?",
-      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19185_261289&client_id=JLUG)",
+      " Oder du willst wissen, wie lange die Klausur dauert?",
+      "\n\n\xE2\x9E\xA1 Dazu findest du Antworten im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19185_261289&client_id=JLUG)",
       " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
       " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
       "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
@@ -271,8 +275,8 @@ case <- function(bot, update){
     text_caps <- paste0(
       "Du schreibst eine \xF0\x9F\x8C\x8F Online-Prüfung (z.B. Open-Book-Test) bei uns und bist unsicher,",
       " wie diese abläuft?",
-      "Oder du willst wissen, welche Funktionen es im Online-Test gibt?",
-      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19186_261289&client_id=JLUG)",
+      " Oder du willst wissen, welche Funktionen es im Online-Test gibt?",
+      "\n\n\xE2\x9E\xA1 Dazu findest du Antworten im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19186_261289&client_id=JLUG)",
       " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
       " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
       "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
@@ -288,8 +292,8 @@ case <- function(bot, update){
     text_caps <- paste0(
       "Du schreibst eine \xF0\x9F\x93\x9D Hausarbeit, Ausarbeit oder Seminararbeit bei uns und bist unsicher,",
       " wie hoch der Seitenumfang ist?",
-      "Oder du willst wissen, welche Abgabefristen es gibt?",
-      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19187_261289&client_id=JLUG)",
+      " Oder du willst wissen, welche Abgabefristen es gibt?",
+      "\n\n\xE2\x9E\xA1 Dazu findest du Antworten im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19187_261289&client_id=JLUG)",
       " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
       " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
       "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
@@ -305,7 +309,7 @@ case <- function(bot, update){
     text_caps <- paste0(
       "Du bist gerade in einem Kurs an unserer Professur und musst eine Vorleistung",
       " erbringen?",
-      "\n\n\xE2\x9E\xA1 Dazu findest du im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19188_261289&client_id=JLUG)",
+      "\n\n\xE2\x9E\xA1 Dazu findest du Antworten im [FAQ](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_19188_261289&client_id=JLUG)",
       " der Professur. Sollte sich deine Fragen dort nicht beantworten, schreib",
       " uns eine \xF0\x9F\x93\xA9 E-Mail (team-abendschoen@sowi.uni-giessen.de).",
       "\n\n\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
@@ -426,6 +430,20 @@ case <- function(bot, update){
       parse_mode = "Markdown",
       reply_markup = keyBack
     )
+  } else if ((any(str_detect(text, regex(wordsTut, ignore_case =TRUE))))){
+    text_caps <- paste0(
+      "Du möchtest Informationen zu den Tutorien zur Statistik-Vorlesung haben?\n\n",
+      "Im [ILIAS-Kurs](https://ilias.uni-giessen.de/goto.php?target=crs_342214&client_id=JLUG) findest du die Zeiten und Orte der Tutorien",
+      " sowie die Tutor:innen als Ansprechpartner.\n\n",
+      "\xF0\x9F\x94\x83 Mit /start kommst du wieder an den Anfang zurück!"
+    )
+    
+    bot$sendMessage(
+      chat_id = update$message$chat_id,
+      text = text_caps,
+      parse_mode = "Markdown",
+      reply_markup = keyExams
+    ) 
   } else {
     text_caps = paste0(
       "Hierauf habe ich leider noch keine Antwort!\n\n", 
