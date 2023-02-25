@@ -11,7 +11,7 @@ copy:
 stop:
   stage: build
   script:
-    - sudo docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
+    - echo $PW | sudo -S  docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
 
 docker:
   stage: deploy
