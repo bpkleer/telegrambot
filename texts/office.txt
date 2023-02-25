@@ -1,0 +1,11 @@
+Du möchtest Informationen zur 📅 *Sprechstunde* haben. Hier sind sie:
+
+Im Team Methoden werden *alle* Sprechstunden-Termine *online* vergeben. Klicke auf den jeweiligen *Namen*, um zur Buchung einer Sprechstunde bei der gewählten Person zu kommen. Der Link führt entweder zu *Stud.IP* oder zu *ILIAS*:
+
+a) [Prof. Dr. Simone Abendschön](https://studip.uni-giessen.de/dispatch.php/consultation/overview?username=g31441)
+
+b) [Tim Schmidt](https://studip.uni-giessen.de/dispatch.php/consultation/overview?username=g32078)
+
+c) [Philipp Kleer](https://ilias.uni-giessen.de/ilias/goto.php?target=usr_172921&client_id=JLUG
+
+🔃 Mit /start kommst du wieder an den Anfang zurück!

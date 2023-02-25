@@ -1,0 +1,5 @@
+Du möchtest Informationen zu den Tutorien zur Statistik-Vorlesung haben? Derzeit stehen die Zeiten noch nicht fest.
+
+Im [ILIAS-Kurs](https://ilias.uni-giessen.de/goto.php?target=crs_342214&client_id=JLUG) findest du ab Beginn des Semesters die Zeiten und Orte der Tutorien sowie die Tutor:innen als Ansprechpartner.
+
+🔃 Mit /start kommst du wieder an den Anfang zurück!

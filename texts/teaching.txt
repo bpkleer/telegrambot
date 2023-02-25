@@ -1,0 +1,19 @@
+Hier findest du das Lehrangebot der Professur im Sommersemester 2023 Bitte beachte, dass die offizielle Bekanntgabe über das [eVV](https://studipuni-giessende/evv) stattfindet und die Angaben hier ohne rechtliche Gewähr sind 
+
+*Bachelor Social Sciences*
+_Modul 7: Statistik und quantitative Analyseverfahren_
+- Statistik für Sozialwissenschaften II (Prof Dr Simone Abendschön), Mo 14:00 - 16:00 Uhr, Campus Phil II, Gebäude C, Raum 028
+- Einführung in die Datenanalyse mit R (Tim Schmidt), Di 10:00 - 12:00 Uhr, Campus Phil II, Haus B, B201
+- Einführung in die Statistik mit SPSS (Prof. Dr. Simone Abendschön), Do 10:00 - 12:00 Uhr, Campus Phil II, Haus B, B201
+- Sozialwissenschaftliche Datenanalyse mit SPSS (Prof. Dr. Simone Abendschön), Mo 16:00 - 18:00 Uhr, Campus Phil II, Haus B, B201
+- Sozialwissenschaftliche Datenanalyse mit SPSS E-Learning (Prof. Dr. Simone Abendschön), Mo 18:00 - 20:00 Uhr, Online-Kurs
+
+_Modul 8: Methodenvertiefung_
+- Die Praxis der Demokratiemessung: Instrumente und Indizes (Tim Schmidt), Mo 08:00 - 10:00 Uhr, Raum noch unbekannt
+
+*Lehramt Politik und Wirtschaft*
+_Modul 7: Theorien und Methoden der Sozialwissenschaften_
+- Einführung in die Statistik mit SPSS (Prof. Dr. Simone Abendschön), Do 10:00 - 12:00 Uhr, Campus Phil II, Haus B, B201
+- Standardisierte Befragungen von Schüler:innen (Patricia Kamper), Blockseminar (Zeiten und Räume bitte eVV entnehmen)
+
+🔃 Mit /start kommst du wieder an den Anfang zurück!

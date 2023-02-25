@@ -1,0 +1,7 @@
+Wenn du am Prüfungstag krank bist, musst du dich mit einem Attest beim Prüfungsamt krank melden. *E-Mails an uns reichen nicht aus!*
+    
+Die Bescheinigung zur Prüfungsunfähigkeit findest du hier: [Link zum Prüfungsamt](https://www.uni-giessen.de/de/fbz/paemter/gwiss/down).
+
+Weitere Infos zum Thema Attest/Krankheit findest du in den [FAQs](https://ilias.uni-giessen.de/goto.php?target=wiki_wpage_16922_261289&client_id=JLUG).
+
+🔃 Mit /start kommst du wieder an den Anfang zurück!

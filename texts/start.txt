@@ -1,0 +1,13 @@
+Hallo %s! 🙋 Ich bin der 🤖 Bot der Professur für 📈 Methoden am Institut für Politikwissenschaft. Ich habe gerade angefangen zu lernen und du kannst mir Fragen rund um die Professur stellen. Ich 🤖 kann keine individuellen Fragen beantworten und der Chat wird nicht von realen Personen gelesen. Teile hier keine vertraulichen Informationen wie deine Matrikelnummer, JLU-Kennungen oder 🔐 Passwörter und Noten.
+
+Bitte beachte, dass ich 🤖 dir nur automatisiert antworten kann. Es kann sein, dass meine Antwort dir nicht weiterhilft. Dann musst du eine E-Mail an das Team schreiben (team-abendschoen@sowi.uni-giessen.de) 📩. Um mich 🤖 neu zu starten, schreibe /start 🔃.
+
+Womit kann ich dir helfen?
+
+1️⃣ Fragen zu Prüfungen 📊
+
+2️⃣ Sprechstunden 📅
+
+3️⃣ Thesis-Betreuungen / Staatsexamen 🎓
+
+Alternativ schreibe ein paar Stichwörter: z.B. Infos zu Simone Abendschön. Wenn ich einmal nicht weiter weiß, kannst du deine Anfrage spezifizieren. Schreibe zum Beispiel 'Prüfungsanmeldung' anstatt 'Anmeldung'.

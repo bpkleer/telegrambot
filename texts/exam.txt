@@ -1,0 +1,19 @@
+Du möchtest Informationen zu 1️⃣ Prüfungen bekommen. Welche Information benötigst du?
+
+🚨 Wie melde ich mich zur Prüfung an?
+
+😷 Was mache ich, wenn ich krank bin?
+
+🕓 Wo bzw. wann findet die Klausur statt?
+
+🔄 Ich bin durchgefallen. Was nun?
+
+🚏 Alles zu Präsenzprüfungen
+
+🌏 Alles zu Online-Prüfungen
+
+📝 Alles zu Hausarbeit, Ausarbeitungen oder Thesis
+
+📐 Alles zur Vorleistung
+
+🔃 Mit /start kommst du wieder an den Anfang zurück!
