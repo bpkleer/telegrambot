@@ -24,6 +24,5 @@ start:
   script:
     - cd /srv/Methodenbot
     - sudo docker run --rm kleer/methodenbot
-  after_script:
-  - echo cleaning now
+  timeout: 0h 10m
 
