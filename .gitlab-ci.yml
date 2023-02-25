@@ -7,3 +7,19 @@ copy:
     - sudo cp -r ./keys/* /srv/Methodenbot/telegramBot/keys/
     - sudo cp -r ./.Renviron /srv/Methodenbot/telegramBot/.Renviron
     - sudo cp -r ./Dockerfile /srv/Methodenbot/Dockerfile
+
+docker:
+  stage: build
+  script:
+    - cd /srv/Methodenbot
+    - docker build -t kleer/methodenbot .
+
+stop:
+  stage: deploy
+  script:
+    - docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
+
+start:
+  stage: deploy
+  script:
+    - docker run -it --rm kleer/methodenbot
