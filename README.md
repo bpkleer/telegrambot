@@ -45,7 +45,7 @@ Zweitens kannst du, wenn die `.csv`- und die `.txt`-Datei erstellt sind, nun den
 
 Drittens musst du die Funktion `case` im Abschnitt `# > Functions` anpassen. Dazu scrollst du ans Ende der Funktion. Du kopierst den letzten `else if`-Abschnitt und fügst diesen vor dem `else`-Abschnitt ein. In diesem musst du dann nur noch die Objekte und Dateien an die neuen Keywörter anpassen. 
 
-Falls du direkt in Git arbeitest, musst du anschließend noch die Pipe anstoßen, wenn du es über RStudio bzw. den Terminal machst, reicht der Push und die Pipe startet den Bot automatisch neu.
+Falls du direkt in Git arbeitest, musst du anschließend noch die Pipe anstoßen, wenn du es über RStudio bzw. den Terminal machst, reicht der Push und die Pipe startet den Bot automatisch neu.a
 
 ## Credits (Telegram Bot)
 Alle Bearbeitungen beruhen auf den Hinweisen im R Paket [telegram.bot](https://cran.r-project.org/web/packages/telegram.bot/index.html) geschrieben von Ernest Benedito & Chris Stefano. Eine Schnelleinführung gibt es [hier](https://ebeneditos.github.io/telegram.bot/).
