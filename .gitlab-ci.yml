@@ -9,3 +9,4 @@ copy:
     - sudo cp -r /telegramBot/texts/* /svr/Methodenbot/telegramBot/texts/*
     - sudo cp -r /telegramBot/keys/* /svr/Methodenbot/telegramBot/keys/*
     - sudo cp -r /telegramBot/.Renviron /svr/Methodenbot/telegramBot/.Renviron
+    - sudo cp -r /telegramBot/Dockerfile /svr/Methodenbot/Dockerfile
