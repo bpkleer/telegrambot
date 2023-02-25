@@ -1,6 +1,3 @@
-before_script:
-  - cd /srv/Methodenbot
-
 copy:
   stage: build
   script:
