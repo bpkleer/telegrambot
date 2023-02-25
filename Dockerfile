@@ -6,6 +6,7 @@ RUN mkdir -p /telegramBot
 ## copy files
 COPY /telegramBot/install.R /telegramBot/install.R
 COPY /telegramBot/init.R /telegramBot/init.R
+COPY /telegramBot/texts /telegramBot/texts
 COPY .Renviron .Renviron
 
 ## install R-packages
