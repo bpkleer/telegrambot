@@ -9,17 +9,17 @@ copy:
     - sudo cp -r ./Dockerfile /srv/Methodenbot/Dockerfile
 
 stop:
-  stage: deploy
-  script:
-    - docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
-
-docker:
   stage: build
   script:
+    - sudo docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
+
+docker:
+  stage: deploy
+  script:
     - cd /srv/Methodenbot
-    - docker build -t kleer/methodenbot .
+    - sudo docker build -t kleer/methodenbot .
 
 start:
   stage: deploy
   script:
-    - docker run -it --rm kleer/methodenbot
+    - sudo docker run -it --rm kleer/methodenbot
