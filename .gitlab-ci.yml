@@ -23,4 +23,4 @@ start:
   stage: deploy
   script:
     - cd /srv/Methodenbot
-    - sudo docker run -it --rm kleer/methodenbot
+    - sudo docker run --rm kleer/methodenbot
