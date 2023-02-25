@@ -59,124 +59,124 @@ keyBack <- ReplyKeyboardMarkup(
 wordsSimone <- read.csv(
   "./keys/simone.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
   )[[1]]
 
 wordsPhil <- read.csv(
   "./keys/philipp.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsTim <- read.csv(
   "./keys/tim.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsPatricia <- read.csv(
   "./keys/patricia.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsMical <- read.csv(
   "./keys/mical.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsAngelika <- read.csv(
   "./keys/angelika.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 # Three main categories
 wordsExam <- read.csv(
   "./keys/exam.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsOffice <- read.csv(
   "./keys/office.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsThesis <- read.csv(
   "./keys/thesis.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 # Subcategory Exams
 wordsOnline <- read.csv(
   "./keys/online.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsRegistration <- read.csv(
   "./keys/registration.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsIll <- read.csv(
   "./keys/ill.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsFail <- read.csv(
   "./keys/fail.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsWritten <- read.csv(
   "./keys/written.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsPlace <- read.csv(
   "./keys/place.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsPresence <- read.csv(
   "./keys/presence.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsGrade <- read.csv(
   "./keys/grade.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsPreexam <- read.csv(
   "./keys/preexam.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 # Additional 
 wordsTut <- read.csv(
   "./keys/tut.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 wordsTeaching <- read.csv(
   "./keys/teaching.csv",
   sep = "\n",
-  header = FALSE
+  header = TRUE
 )[[1]]
 
 # > Starting Updater ----
