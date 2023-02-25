@@ -1,0 +1,11 @@
+before_script:
+  - cd /srv/Methodenbot
+
+copy:
+  stage: build
+  script:
+    - sudo cp -r /telegramBot/install.R /svr/Methodenbot/telegramBot/install.R
+    - sudo cp -r /telegramBot/init.R /svr/Methodenbot/telegramBot/init.R
+    - sudo cp -r /telegramBot/texts/* /svr/Methodenbot/telegramBot/texts/*
+    - sudo cp -r /telegramBot/keys/* /svr/Methodenbot/telegramBot/keys/*
+    - sudo cp -r /telegramBot/.Renviron /svr/Methodenbot/telegramBot/.Renviron
