@@ -4,9 +4,9 @@ before_script:
 copy:
   stage: build
   script:
-    - sudo cp -r ./install.R /svr/Methodenbot/telegramBot/install.R
-    - sudo cp -r ./init.R /svr/Methodenbot/telegramBot/init.R
-    - sudo cp -r ./texts/* /svr/Methodenbot/telegramBot/texts/*
-    - sudo cp -r ./keys/* /svr/Methodenbot/telegramBot/keys/*
-    - sudo cp -r ./.Renviron /svr/Methodenbot/telegramBot/.Renviron
-    - sudo cp -r ./Dockerfile /svr/Methodenbot/Dockerfile
+    - sudo cp -r ./install.R /srv/Methodenbot/telegramBot/install.R
+    - sudo cp -r ./init.R /srv/Methodenbot/telegramBot/init.R
+    - sudo cp -r ./texts/* /srv/Methodenbot/telegramBot/texts/*
+    - sudo cp -r ./keys/* /srv/Methodenbot/telegramBot/keys/*
+    - sudo cp -r ./.Renviron /srv/Methodenbot/telegramBot/.Renviron
+    - sudo cp -r ./Dockerfile /srv/Methodenbot/Dockerfile
