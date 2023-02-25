@@ -24,3 +24,6 @@ start:
   script:
     - cd /srv/Methodenbot
     - sudo docker run --rm kleer/methodenbot
+  after_script:
+  - echo cleaning now
+
