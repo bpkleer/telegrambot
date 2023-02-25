@@ -10,6 +10,7 @@
 # > Loading libraries ----
 library("telegram.bot")
 library("tidyverse")
+setwd(paste0(getwd(), "/telegramBot"))
 
 # > Custom keyboard replies ----
 # with these lists we adjust keyboard responses in telegram
