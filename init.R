@@ -50,84 +50,134 @@ keyBack <- ReplyKeyboardMarkup(
 )
 
 # > Custom keywords as Strings ----
-# each lists represents a case for an answer, answers are sorted by the last
-# name of the keywords, e.g. simone.txt for wordsSimone etc. 
+# each lists represents a case for an answer, keywords are sorted by the last
+# name of the keywords object, e.g. simone.csv for wordsSimone etc. 
+# answers to this keywords are also sorted by the last name, e.g., simone.txt
+# for cases of wordsSimone
 # Sometimes emojis are included by Byte-definition
 # Persons
-wordsSimone <- c("Simone", "Simone Abendschön")
-wordsPhil <- c("Philipp", "Philipp Kleer")
-wordsTim <- c("Tim", "Tim Schmidt")
-wordsPatricia <- c("Patricia", "Patricia Kamper")
-wordsMical <- c("Mical", "Mical Gerezgiher")
-wordsAngelika <- c("Angelika", "Angelika Wicke", "Sekretariat", "Sekretärin")
+wordsSimone <- read.csv(
+  "./keys/simone.csv",
+  sep = "\n",
+  header = FALSE
+  )[[1]]
+
+wordsPhil <- read.csv(
+  "./keys/philipp.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsTim <- read.csv(
+  "./keys/tim.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsPatricia <- read.csv(
+  "./keys/patricia.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsMical <- read.csv(
+  "./keys/mical.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsAngelika <- read.csv(
+  "./keys/angelika.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
 
 # Three main categories
-wordsExam <- c(
-  "MAP", "Prüfungsregularien", "Prüfungsregeln", 
-  "Prüfungsablauf", "Allgemeines zur Prüfung",
-  "Infos zur Prüfung", "Informationen zur Prüfung",
-  "Information zur Prüfung", "(?<!.)Prüfung",
-  "\x31\xE2\x83\xA3 Prüfungen", "1.", "1"
-)
-wordsOffice <- c(
-  "Sprechstunde", "Sprechzeiten", "Beratung",
-  "\x32\xE2\x83\xA3 Sprechstunden", "2", "2."
-)
-wordsThesis <- c(
-  "Thesis", "Abschlussarbeit", "Bachelorarbeit",
-  "Masterarbeit", "Bachelorthesis", "Bachelor-Thesis",
-  "Masterthesis", "Master-Thesis", "WHA", "wissenschaftliche Hausarbeit",
-  "Staatsexamen", "3", "3.", "\x33\xE2\x83\xA3 Thesis" 
-)
+wordsExam <- read.csv(
+  "./keys/exam.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsOffice <- read.csv(
+  "./keys/office.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsThesis <- read.csv(
+  "./keys/thesis.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
 
 # Subcategory Exams
-wordsOnline <- c(
-  "Online-Test", "Online-Prüfung", "Open-Book-Test",
-  "\xF0\x9F\x8C\x8F Online-Prüfung"
-)
-wordsRegistration <- c(
-  "Prüfungsanmeldung", "Anmeldung", "flexnow",
-  "\xF0\x9F\x9A\xA8 Prüfungsanmeldung"
-)
-wordsIll <- c(
-  "Attest", "Krankheit", "krank", "Prüfungsunfähigkeit", 
-  "prüfungsunfähig", "\xF0\x9F\x98\xB7 Attest/Krankheit"
-)
-wordsFail <- c(
-  "Wiederholungsprüfung", "Ausgleichklausur", 
-  "Ausgleichsklausur", "durchgefallen", "nicht bestanden",
-  "\xF0\x9F\x94\x84 Wiederholungsprüfung"
-)
-wordsWritten <- c(
-  "Hausarbeit", "Seminararbeit", "Ausarbeitung",
-  "\xF0\x9F\x93\x9D Hausarbeit"
-)
-wordsPlace <- c(
-  "Prüfungsort", "Prüfungsraum", "Prüfungszeit",
-  "Klausurzeit", "Klausurort", "MAP-Ort", "MAP-Zeit", 
-  "MAP Ort", "MAP Zeit", "\xF0\x9F\x95\x93 Ort/Zeit Klausur" 
-)
-wordsPresence <- c(
-  "Präsenzprüfung", "Präsenzklausur", 
-  "\xF0\x9F\x9A\x8F Präsenzprüfung"
-  )
-wordsGrade <- c(
-  "Note", "Notenbescheinigung", "Leistungsnachweis", 
-  "Einsicht", "Klausureinsicht"
-)
-wordsPreexam <- c(
-  "\xF0\x9F\x93\x90 Vorleistung", "Vorleistung"
-)
+wordsOnline <- read.csv(
+  "./keys/online.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsRegistration <- read.csv(
+  "./keys/registration.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsIll <- read.csv(
+  "./keys/ill.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsFail <- read.csv(
+  "./keys/fail.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsWritten <- read.csv(
+  "./keys/written.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsPlace <- read.csv(
+  "./keys/place.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsPresence <- read.csv(
+  "./keys/presence.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsGrade <- read.csv(
+  "./keys/grade.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsPreexam <- read.csv(
+  "./keys/preexam.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
 
 # Additional 
-wordsTut <- c(
-  "Tutorium", "Tutor", "Tutorin", "Tutor:in", "Tutoren",
-  "Tutorinnen", "Tutor:innen"
-)
-wordsTeaching <- c(
-  "Lehrveranstaltung", "Lehrveranstaltungen", "Lehre", "Kurse",
-  "Lehrangebot"
-)
+wordsTut <- read.csv(
+  "./keys/tut.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
+
+wordsTeaching <- read.csv(
+  "./keys/teaching.csv",
+  sep = "\n",
+  header = FALSE
+)[[1]]
 
 # > Starting Updater ----
 # usethis::edit_r_environ("project")
