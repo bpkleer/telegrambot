@@ -8,16 +8,16 @@ copy:
     - sudo cp -r ./.Renviron /srv/Methodenbot/telegramBot/.Renviron
     - sudo cp -r ./Dockerfile /srv/Methodenbot/Dockerfile
 
+stop:
+  stage: deploy
+  script:
+    - docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
+
 docker:
   stage: build
   script:
     - cd /srv/Methodenbot
     - docker build -t kleer/methodenbot .
-
-stop:
-  stage: deploy
-  script:
-    - docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
 
 start:
   stage: deploy
