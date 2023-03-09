@@ -1,4 +1,4 @@
-Hier findest du das Lehrangebot der Professur im Sommersemester 2023 Bitte beachte, dass die offizielle Bekanntgabe über das [eVV](https://studipuni-giessende/evv) stattfindet und die Angaben hier ohne rechtliche Gewähr sind 
+Hier findest du das Lehrangebot der Professur im *Sommersemester 2023*. Bitte beachte, dass die offizielle Bekanntgabe über das [eVV](https://studip.uni-giessen.de/evv/extern.php) erfolgt und die Angaben hier ohne rechtliche Gewähr sind.
 
 *Bachelor Social Sciences*
 _Modul 7: Statistik und quantitative Analyseverfahren_
@@ -14,6 +14,6 @@ _Modul 8: Methodenvertiefung_
 *Lehramt Politik und Wirtschaft*
 _Modul 7: Theorien und Methoden der Sozialwissenschaften_
 - Einführung in die Statistik mit SPSS (Prof. Dr. Simone Abendschön), Do 10:00 - 12:00 Uhr, Campus Phil II, Haus B, B201
-- Standardisierte Befragungen von Schüler:innen (Patricia Kamper), Blockseminar (Zeiten und Räume bitte eVV entnehmen)
+- Standardisierte Befragungen von Schüler:innen (Patricia Kamper), Blockseminar (Zeiten und Räume bitte [eVV](https://studip.uni-giessen.de/evv/extern.php) entnehmen)
 
 🔃 Mit /start kommst du wieder an den Anfang zurück!
