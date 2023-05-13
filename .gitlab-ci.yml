@@ -1,12 +1,12 @@
 copy:
   stage: build
   script:
-    - sudo cp -r ./install.R /srv/Methodenbot/telegramBot/install.R
-    - sudo cp -r ./init.R /srv/Methodenbot/telegramBot/init.R
-    - sudo cp -r ./texts/* /srv/Methodenbot/telegramBot/texts/
-    - sudo cp -r ./keys/* /srv/Methodenbot/telegramBot/keys/
-    - sudo cp -r ./.Renviron /srv/Methodenbot/telegramBot/.Renviron
-    - sudo cp -r ./Dockerfile /srv/Methodenbot/Dockerfile
+    - echo $PW | sudo cp -r ./install.R /srv/Methodenbot/telegramBot/install.R
+    - echo $PW | sudo cp -r ./init.R /srv/Methodenbot/telegramBot/init.R
+    - echo $PW | sudo cp -r ./texts/* /srv/Methodenbot/telegramBot/texts/
+    - echo $PW | sudo cp -r ./keys/* /srv/Methodenbot/telegramBot/keys/
+    - echo $PW | sudo cp -r ./.Renviron /srv/Methodenbot/telegramBot/.Renviron
+    - echo $PW | sudo cp -r ./Dockerfile /srv/Methodenbot/Dockerfile
   tags:
     - update
 
