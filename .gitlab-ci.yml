@@ -7,17 +7,23 @@ copy:
     - sudo cp -r ./keys/* /srv/Methodenbot/telegramBot/keys/
     - sudo cp -r ./.Renviron /srv/Methodenbot/telegramBot/.Renviron
     - sudo cp -r ./Dockerfile /srv/Methodenbot/Dockerfile
+  tags:
+    - update
 
 stop:
   stage: build
   script:
     - echo $PW | sudo -S  docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
+  tags: 
+    - update
 
 docker:
   stage: deploy
   script:
     - cd /srv/Methodenbot
     - sudo docker build -t kleer/methodenbot .
+  tags:
+    - update
 
 start:
   stage: deploy
@@ -25,4 +31,6 @@ start:
     - cd /srv/Methodenbot
     - sudo docker run --rm kleer/methodenbot
   timeout: 0h 5m
+  tags:
+    - update
 
