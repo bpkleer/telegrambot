@@ -13,7 +13,7 @@ copy:
 stop:
   stage: build
   script:
-    - echo $PW | sudo -S  docker stop $(docker ps -q --filter ancestor=kleer/methodenbot )
+    - echo $PW | sudo -S  docker stop $(docker ps -q --filter ancestor=kleer/methodenbot)
   tags: 
     - update
 
