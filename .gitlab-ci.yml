@@ -29,7 +29,6 @@ start:
   stage: deploy
   script:
     - cd /srv/Methodenbot
-    - sudo docker stop $(docker ps -q)
     - sudo docker run --restart unless-stopped kleer/methodenbot
   timeout: 0h 5m
   tags:
